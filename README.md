@@ -4,7 +4,7 @@
 
 [Chongyi Li](https://li-chongyi.github.io/), [Chun-Le Guo](https://scholar.google.com.au/citations?user=RZLYwR0AAAAJ&hl=en),  [Man Zhou](https://manman1995.github.io/),  [Zhexin Liang](),  [Shangchen Zhou](https://shangchenzhou.com/),  [Ruicheng Feng](https://jnjaby.github.io/),   [Chen Change Loy](https://www.mmlab-ntu.com/person/ccloy/) 
 
-S-Lab, Nanyang Technological University; Naikai University
+S-Lab, Nanyang Technological University; Nankai University
 
 ### Updates
 
