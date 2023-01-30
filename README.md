@@ -8,16 +8,8 @@ S-Lab, Nanyang Technological University; Naikai University
 
 ### Updates
 
-- **2022.09.30**:  Upload LOLBlur dataset to [BaiduPan](https://pan.baidu.com/s/1CPphxCKQJa_iJAGD6YACuA) (key: dz6u) for quick download in China :cn:
-- **2022.09.27**:  Upload LOLBlur dataset to [Google Drive](https://drive.google.com/drive/folders/11HcsiHNvM7JUlbuHIniREdQ2peDUhtwX?usp=sharing).
-- **2022.09.27**:  The code and pre-trained models are released :hugs:
-- **2022.07.04**:  This repo is created.
+- **2023.01.30**:  This repo is created.
 
-### TODO
-- [ ] Built and train a new network for low-light enhancement
-- [ ] Add checkpoint of LEDNetGAN (trained with GAN)
-- [x] Add checkpoint of retrained LEDNet (retrained on BasicSR)
-- [x] Add checkpoint of LEDNet in paper
 
 ---
 
