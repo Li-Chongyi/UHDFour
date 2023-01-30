@@ -1,14 +1,10 @@
-<p align="center">
-  <img src="assets/LEDNet_LOLBlur_logo.png" height=90>
-</p>
+## Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement (ICLR 2023 Oral)
 
-## LEDNet: Joint Low-light Enhancement and Deblurring in the Dark (ECCV 2022)
+[Paper]( ) | [Project Page]([https://li-chongyi.github.io/UHDFour/](https://li-chongyi.github.io/UHDFour/)) 
 
-[Paper](https://arxiv.org/abs/2202.03373) | [Project Page](https://shangchenzhou.com/projects/LEDNet/) | [Video](https://youtu.be/450dkE-fOMY) | [Replicate Demo](https://replicate.com/sczhou/lednet)
+[Chongyi Li](https://li-chongyi.github.io/), [Chun-Le Guo](https://scholar.google.com.au/citations?user=RZLYwR0AAAAJ&hl=en),  [Man Zhou](https://manman1995.github.io/),  [Zhexin Liang](),  [Shangchen Zhou](https://shangchenzhou.com/),  [Ruicheng Feng](https://jnjaby.github.io/),   [Chen Change Loy](https://www.mmlab-ntu.com/person/ccloy/) 
 
-[Shangchen Zhou](https://shangchenzhou.com/), [Chongyi Li](https://li-chongyi.github.io/), [Chen Change Loy](https://www.mmlab-ntu.com/person/ccloy/) 
-
-S-Lab, Nanyang Technological University
+S-Lab, Nanyang Technological University; Naikai University
 
 ### Updates
 
