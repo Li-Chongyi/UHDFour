@@ -1,6 +1,6 @@
 ## Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement (ICLR 2023 Oral)
 
-[Paper]( ) | [Project Page]([https://li-chongyi.github.io/UHDFour/](https://li-chongyi.github.io/UHDFour/)) 
+[Paper]( ) | [Project Page](https://li-chongyi.github.io/UHDFour/) 
 
 [Chongyi Li](https://li-chongyi.github.io/), [Chun-Le Guo](https://scholar.google.com.au/citations?user=RZLYwR0AAAAJ&hl=en),  [Man Zhou](https://manman1995.github.io/),  [Zhexin Liang](),  [Shangchen Zhou](https://shangchenzhou.com/),  [Ruicheng Feng](https://jnjaby.github.io/),   [Chen Change Loy](https://www.mmlab-ntu.com/person/ccloy/) 
 
