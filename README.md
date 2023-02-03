@@ -109,21 +109,19 @@ CUDA_VISIBLE_DEVICES=0,1 python src/train.py \
 
 This project is licensed under <a rel="license" href="https://github.com/sczhou/LEDNet/blob/master/LICENSE">S-Lab License 1.0</a>. Redistribution and use for non-commercial purposes should follow this license.
 
-### Acknowledgement
 
-This project is based on [BasicSR](https://github.com/XPixelGroup/BasicSR). We calculate evaluation metrics using [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch) toolbox. Thanks for their awesome works.
 
 ### Citation
 If our work is useful for your research, please consider citing:
 
 ```bibtex
-@InProceedings{zhou2022lednet,
-    author = {Zhou, Shangchen and Li, Chongyi and Loy, Chen Change},
-    title = {LEDNet: Joint Low-light Enhancement and Deblurring in the Dark},
-    booktitle = {ECCV},
-    year = {2022}
+@InProceedings{Li2023ICLR,
+    author = {Li, Chongyi and Guo, Chun-Le and Zhou, Man and Liang, Zhexin and Zhou, Shangchen and Feng, Ruicheng and Loy, Chen Change},
+    title = {Embedding Fourier for Ultra-High-Definition Low-Light Image Enhancement},
+    booktitle = {ICLR},
+    year = {2023}
 }
 ```
 
 ### Contact
-If you have any questions, please feel free to reach me out at `shangchenzhou@gmail.com`.
+If you have any questions, please feel free to reach me out at `lichongyi25@gmail.com`.
