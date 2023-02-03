@@ -14,7 +14,7 @@ S-Lab, Nanyang Technological University; Nankai University
 ---
 
 ### UHD-LL Dataset
-![overall_structure](./figs/pipeline.jpg)
+![overall_structure](UHD_LL_dataset.png)
 (The datasets are hosted on both Google Drive and BaiduPan)
 | Dataset | Link | Number | Description|
 | :----- | :--: | :----: | :---- | 
