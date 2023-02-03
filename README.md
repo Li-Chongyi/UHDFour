@@ -71,7 +71,7 @@ ckpts
 We provide some classic test images in the [`classic_test_image`](./data/classic_test_image/) directory.
 
 Run the following command to process them:
-```shell
+```
 
 CUDA_VISIBLE_DEVICES=X python src/test_PSNR.py --dataset-name our_test  
 
@@ -102,7 +102,7 @@ CUDA_VISIBLE_DEVICES=0,1 python src/train.py \
   --loss l1 \
   --plot-stats \
   --cuda   
-
+```
 
 
 ### License
