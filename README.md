@@ -53,21 +53,19 @@ S-Lab, Nanyang Technological University; Nankai University
 ### Quick Inference
 Before performing the following steps, please download our pretrained model first.
 
- **Download Links:** [[Google Drive](https://drive.google.com/drive/folders/1YZnKreDfqbs_GHB76Ko4qtifpPWPbCwU?usp=sharing)] [[Baidu Disk (password: 1tap)](https://pan.baidu.com/s/1i6A_Vjq-WUSLUJYMyYvlew)]
+ **Download Links:** [[Google Drive](] [[Baidu Disk (password: )]()]
 
 Then, unzip the file and place the models to `ckpts/<dataset_name>` directory, separately.
 
 The directory structure will be arranged as:
 ```
 ckpts
-   |- dense
-      |- PSNR1662_SSIM05602.pt  
-   |- NH
-      |- PSNR2066_SSIM06844.pt
-   |- indoor
-      |- PSNR3663_ssim09881.pt
-   |- outdoor
-      |- PSNR3518_SSIM09860.pt
+   |- UHD
+      |- XX.pt  
+   |- LOL
+      |- 
+   |- LOL2
+      |- 
 ```
 
 We provide some classic test images in the [`classic_test_image`](./data/classic_test_image/) directory.
@@ -78,7 +76,7 @@ Run the following command to process them:
 CUDA_VISIBLE_DEVICES=X python src/test_PSNR.py --dataset-name our_test  
 
 ```
-The dehazed images will be saved in the `results/` directory.
+The enhanced images will be saved in the `results/` directory.
 
 You can also run the following command to process your own images:
 ```
@@ -86,51 +84,26 @@ CUDA_VISIBLE_DEVICES=X python src/test_PSNR.py \
   --dataset-name our_test -t path/to/your/test/folder   
 ```
 
-### Train the Model
-Before training, you need to:
+### Train
+See `python3 src/train.py --h` for list of optional arguments, or `train.sh` for examples.
 
-- Download the LOL-Blur Dataset from [Google Drive](https://drive.google.com/drive/folders/11HcsiHNvM7JUlbuHIniREdQ2peDUhtwX?usp=sharing) / [BaiduPan (key: dz6u)](https://pan.baidu.com/s/1CPphxCKQJa_iJAGD6YACuA).
-- Specify `dataroot_gt` and `dataroot_lq` in the corresponding option file.
-
-Training LEDNet:
+An example of NH-HAZE dataset.
 ```
-# without GAN
-python basicsr/train.py -opt options/train_LEDNet.yml
+CUDA_VISIBLE_DEVICES=0,1 python src/train.py \
+  --dataset-name NH \
+  --train-dir ./data/train_NH/ \
+  --valid-dir ./data/valid_NH/ \
+  --ckpt-save-path ../ckpts \
+  --ckpt-overwrite \
+  --nb-epochs 5000 \
+  --batch-size 2\
+  --train-size 800 1200  \
+  --valid-size 800 1200 \
+  --loss l1 \
+  --plot-stats \
+  --cuda   
 
-# with GAN
-python basicsr/train.py -opt options/train_LEDNetGAN.yml
-```
-This project is built on [BasicSR](https://github.com/XPixelGroup/BasicSR), the detailed tutorial on training commands and config settings can be found [here](https://github.com/XPixelGroup/BasicSR/blob/master/docs/introduction.md).
 
-
-
-### Evaluation
-
-```
-# set evaluation metrics of 'psnr', 'ssim', and 'lpips (vgg)'
-python scripts/calculate_iqa_pair.py --result_path 'RESULT_ROOT' --gt_path 'GT_ROOT' --metrics psnr ssim lpips
-```
-(The released model was retrained using the [BasicSR](https://github.com/XPixelGroup/BasicSR) framework, which makes it easier to use or further develop upon this work. NOTE that the PSNR and SSIM scores of retrained model are higher than the paper model.)
-
-### Generate Low-light Images from Your Own Data
-- Download the CE-ZeroDCE pretrained model from [[Release V0.1.0](https://github.com/sczhou/LEDNet/releases/tag/v0.1.0)] to the `weights` folder. You can manually download the pretrained models OR download by runing the following command.
-  
-  > python scripts/download_pretrained_models.py CE-ZeroDCE
-  
-Run low-light generation:
-```
-python scripts/generate_low_light_imgs.py --test_path 'IMG_ROOT' --result_path 'RESULT_ROOT' --model_path './weights/ce_zerodce.pth'
-```
-
-### Inference with Cog
-To run containerized local inference with LEDNet using [Cog](https://github.com/replicate/cog), run the following commands in the project root:
-
-```
-cog run python basicsr/setup.py develop
-cog predict -i image=@'path/to/input_image.jpg'
-```
-
-You can view this demo running as an API [here on Replicate](https://replicate.com/sczhou/lednet).
 
 ### License
 
