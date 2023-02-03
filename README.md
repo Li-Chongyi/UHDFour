@@ -47,19 +47,44 @@ S-Lab, Nanyang Technological University; Nankai University
 - CUDA >= 10.1
 - Other required packages in `requirements.txt`
 ```
-# git clone this repository
-git clone https://github.com/sczhou/LEDNet
-cd LEDNet
 
-# create new anaconda env
-conda create -n lednet python=3.8 -y
-conda activate lednet
-
-# install python dependencies
-pip3 install -r requirements.txt
-python basicsr/setup.py develop
 ```
 
+### Quick Inference
+Before performing the following steps, please download our pretrained model first.
+
+ **Download Links:** [[Google Drive](https://drive.google.com/drive/folders/1YZnKreDfqbs_GHB76Ko4qtifpPWPbCwU?usp=sharing)] [[Baidu Disk (password: 1tap)](https://pan.baidu.com/s/1i6A_Vjq-WUSLUJYMyYvlew)]
+
+Then, unzip the file and place the models to `ckpts/<dataset_name>` directory, separately.
+
+The directory structure will be arranged as:
+```
+ckpts
+   |- dense
+      |- PSNR1662_SSIM05602.pt  
+   |- NH
+      |- PSNR2066_SSIM06844.pt
+   |- indoor
+      |- PSNR3663_ssim09881.pt
+   |- outdoor
+      |- PSNR3518_SSIM09860.pt
+```
+
+We provide some classic test images in the [`classic_test_image`](./data/classic_test_image/) directory.
+
+Run the following command to process them:
+```shell
+
+CUDA_VISIBLE_DEVICES=X python src/test_PSNR.py --dataset-name our_test  
+
+```
+The dehazed images will be saved in the `results/` directory.
+
+You can also run the following command to process your own images:
+```
+CUDA_VISIBLE_DEVICES=X python src/test_PSNR.py \
+  --dataset-name our_test -t path/to/your/test/folder   
+```
 
 ### Train the Model
 Before training, you need to:
@@ -77,23 +102,7 @@ python basicsr/train.py -opt options/train_LEDNetGAN.yml
 ```
 This project is built on [BasicSR](https://github.com/XPixelGroup/BasicSR), the detailed tutorial on training commands and config settings can be found [here](https://github.com/XPixelGroup/BasicSR/blob/master/docs/introduction.md).
 
-### Quick Inference
-- Download the LEDNet pretrained model from [[Release V0.1.0](https://github.com/sczhou/LEDNet/releases/tag/v0.1.0)] to the `weights` folder. You can manually download the pretrained models OR download by runing the following command.
-  
-  > python scripts/download_pretrained_models.py LEDNet
-  
-Inference LEDNet:
-```
-# test LEDNet (paper model)
-python inference_lednet.py --model lednet --test_path ./inputs
 
-# test retrained LEDNet (higher PSNR and SSIM)
-python inference_lednet.py --model lednet_retrain --test_path ./inputs
-
-# test LEDNetGAN
-python inference_lednet.py --model lednetgan --test_path ./inputs
-```
-The results will be saved in the `results` folder.
 
 ### Evaluation
 
