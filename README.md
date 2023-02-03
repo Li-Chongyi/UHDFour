@@ -14,7 +14,7 @@ S-Lab, Nanyang Technological University; Nankai University
 ---
 
 ### UHD-LL Dataset
-![overall_structure](UHD_LL_dataset.png)
+![Example](UHD_LL_dataset.png)
 (The datasets are hosted on both Google Drive and BaiduPan)
 | Dataset | Link | Number | Description|
 | :----- | :--: | :----: | :---- | 
@@ -40,7 +40,7 @@ S-Lab, Nanyang Technological University; Nankai University
 
 </details>
 
-
+![Overview](framework.png)
 ### Dependencies and Installation
 
 - Pytorch >= 1.7.1
